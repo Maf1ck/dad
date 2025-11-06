@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-beige: #F5E9DA;
+  --color-maroon: #800000;
+  --color-gold: #D4AF37;
+  --shadow-soft: 0 10px 25px -10px rgba(0,0,0,0.2);
+  --radius-xl: 1rem;
+}
+
+/* Global base styles */
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-beige text-maroon antialiased;
+  }
+}
+
+/* Reusable button */
+@layer components {
+  .btn-primary {
+    @apply bg-maroon text-beige px-4 sm:px-6 py-2 sm:py-3 rounded-xl shadow-soft hover:bg-gold hover:text-maroon transition-colors duration-200 text-sm sm:text-base;
+  }
+}
+
+/* Mobile optimizations */
+@layer utilities {
+  @media (max-width: 640px) {
+    .slick-dots {
+      bottom: 10px !important;
+    }
+    .slick-dots li button:before {
+      font-size: 10px !important;
+    }
+  }
+  
+  /* Custom slider arrows */
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
+  }
+}
