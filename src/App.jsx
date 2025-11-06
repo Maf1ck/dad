@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-beige">
-      <header className="sticky top-0 z-10 bg-beige/80 backdrop-blur border-b border-gold/30">
+      <header className="sticky top-0 z-10 bg-beige/80 backdrop-blur border-b border-gold/30 overflow-visible">
         <nav className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link to="/" className="text-xl sm:text-2xl font-bold text-maroon">🎂 Dad Day</Link>
           {/* Desktop Menu */}
@@ -27,7 +27,9 @@ function App() {
             <Link className="btn-primary text-sm sm:text-base" to="/achievements">Досягнення</Link>
           </div>
           {/* Mobile Burger Menu */}
-          <BurgerMenu />
+          <div className="md:hidden">
+            <BurgerMenu />
+          </div>
         </nav>
       </header>
 
